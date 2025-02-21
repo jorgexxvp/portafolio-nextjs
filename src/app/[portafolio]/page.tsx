@@ -5,9 +5,90 @@ import Image from 'next/image';
 import '../globals.css';
 import { CustomButton, IconButton } from '@/components';
 import { GithubIcon, MoonIcon, SunIcon } from '@/toolbox';
+import { Slider } from '@/components/Slider';
+import useWindowSize from '@/toolbox/utils/useWindowSize';
 
 export default function Portafolio() {
   const { setTheme, theme } = useTheme();
+  const components = [
+    <div key="1" className="flex flex-col gap-3">
+      <div className="flex flex-col w-full h-full text-center justify-center items-center">
+        <Image
+          alt="skill"
+          src="https://r-charts.com/es/miscelanea/procesamiento-imagenes-magick_files/figure-html/importar-imagen-r.png"
+          width={160}
+          height={160}
+        />
+        <p className="text-4xl">Typescript</p>
+      </div>
+    </div>,
+    <div key="2" className="flex flex-col gap-3">
+      <div className="flex flex-col w-full h-full text-center justify-center items-center">
+        <Image
+          alt="skill"
+          src="https://r-charts.com/es/miscelanea/procesamiento-imagenes-magick_files/figure-html/importar-imagen-r.png"
+          width={160}
+          height={160}
+        />
+        <p className="text-4xl">Typescript 2</p>
+      </div>
+    </div>,
+    <div key="3" className="flex flex-col gap-3">
+      <div className="flex flex-col w-full h-full text-center justify-center items-center">
+        <Image
+          alt="skill"
+          src="https://r-charts.com/es/miscelanea/procesamiento-imagenes-magick_files/figure-html/importar-imagen-r.png"
+          width={160}
+          height={160}
+        />
+        <p className="text-4xl">Typescript 3</p>
+      </div>
+    </div>,
+    <div key="4" className="flex flex-col gap-3">
+      <div className="flex flex-col w-full h-full text-center justify-center items-center">
+        <Image
+          alt="skill"
+          src="https://r-charts.com/es/miscelanea/procesamiento-imagenes-magick_files/figure-html/importar-imagen-r.png"
+          width={160}
+          height={160}
+        />
+        <p className="text-4xl">Typescript 4</p>
+      </div>
+    </div>,
+    <div key="5" className="flex flex-col gap-3">
+      <div className="flex flex-col w-full h-full text-center justify-center items-center">
+        <Image
+          alt="skill"
+          src="https://r-charts.com/es/miscelanea/procesamiento-imagenes-magick_files/figure-html/importar-imagen-r.png"
+          width={160}
+          height={160}
+        />
+        <p className="text-4xl">Typescript 5</p>
+      </div>
+    </div>,
+    <div key="6" className="flex flex-col gap-3">
+      <div className="flex flex-col w-full h-full text-center justify-center items-center">
+        <Image
+          alt="skill"
+          src="https://r-charts.com/es/miscelanea/procesamiento-imagenes-magick_files/figure-html/importar-imagen-r.png"
+          width={160}
+          height={160}
+        />
+        <p className="text-4xl">Typescript 6</p>
+      </div>
+    </div>,
+    <div key="7" className="flex flex-col gap-3">
+      <div className="flex flex-col w-full h-full text-center justify-center items-center">
+        <Image
+          alt="skill"
+          src="https://r-charts.com/es/miscelanea/procesamiento-imagenes-magick_files/figure-html/importar-imagen-r.png"
+          width={160}
+          height={160}
+        />
+        <p className="text-4xl">Typescript 7</p>
+      </div>
+    </div>,
+  ];
   const mockProject = [
     {
       url: '',
@@ -78,6 +159,11 @@ export default function Portafolio() {
       ],
     },
   ];
+
+  const { width } = useWindowSize();
+  const visibleCount =
+    width > 1550 ? 5 : width > 1250 ? 4 : width > 950 ? 3 : width > 650 ? 2 : 1;
+
   return (
     <div className="flex flex-col items-center justify-center">
       <IconButton
@@ -86,7 +172,7 @@ export default function Portafolio() {
         }}
         icon={theme === ETheme.LIGHT ? MoonIcon.src : SunIcon.src}
       />
-
+      <p>{width}</p>
       <CustomButton
         icon={GithubIcon.src}
         url="https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating#link-component"
@@ -96,8 +182,8 @@ export default function Portafolio() {
         <p className="text-8xl text-white-300">Jorge Luis Valdez Pacheco</p>
         <p className="text-5xl text-white-300">Software Developer</p>
       </div>
-      <div className="flex flex-row  gap-5 justify-center text-center p-5 bg-white-0 bg-opacity-5 w-full">
-        <div className="w-1/3 flex flex-row border-r-blue-900 border-r-2 justify-center items-center">
+      <div className="flex flex-col xl:flex-row gap-5 justify-center text-center p-5 bg-white-0 bg-opacity-5 w-full">
+        <div className="w-1/3 flex flex-row justify-center items-center xl:border-r-blue-900 xl:border-r-2">
           <Image
             width={200}
             height={200}
@@ -128,7 +214,10 @@ export default function Portafolio() {
           </p>
         </div>
       </div>
-      <br />
+      <div className="p-10">
+        <span className="text-4xl">Skills</span>
+        <Slider visibleCount={visibleCount} components={components} />
+      </div>
       <div className="flex flex-col gap-16 text-center p-5 bg-white-0 bg-opacity-5 w-full">
         <span className="text-6xl">Work Experience</span>
         <div className="grid grid-cols-2 gap-9 px-36 ">

@@ -8,7 +8,76 @@ import { GithubIcon, MoonIcon, SunIcon } from '@/toolbox';
 
 export default function Portafolio() {
   const { setTheme, theme } = useTheme();
-
+  const mockProject = [
+    {
+      url: '',
+      title: 'Titulo 1',
+      description:
+        'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
+    },
+    {
+      url: '',
+      title: 'Titulo 2',
+      description:
+        'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
+    },
+    {
+      url: '',
+      title: 'Titulo 3',
+      description:
+        'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
+    },
+    {
+      url: '',
+      title: 'Titulo 4',
+      description:
+        'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
+    },
+    {
+      url: '',
+      title: 'Titulo 5',
+      description:
+        'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
+    },
+    {
+      url: '',
+      title: 'Titulo 6',
+      description:
+        'lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum',
+    },
+  ];
+  const data = [
+    {
+      title: 'Desarrollador Front End - ReactJS/NextJS',
+      description: '2MYR(09/2020 - 07/2022)',
+      function: [
+        '-Desarrollo de la interfaz de usuario y diseño responsive. ',
+        '-Implementación de funcionalidades como botones, formularios, tablas, dashboard, etc.',
+        '-Integración de APIs además del uso de herramientas como Postman, StopLight.',
+        '-Mantenimiento, correcciones, optimización y refactorizar de proyectos. ',
+      ],
+    },
+    {
+      title: 'Desarrollador Front End - ReactJS/NextJS',
+      description: '2MYR(09/2020 - 07/2022)',
+      function: [
+        '-Desarrollo de la interfaz de usuario y diseño responsive. ',
+        '-Implementación de funcionalidades como botones, formularios, tablas, dashboard, etc.',
+        '-Integración de APIs además del uso de herramientas como Postman, StopLight.',
+        '-Mantenimiento, correcciones, optimización y refactorizar de proyectos. ',
+      ],
+    },
+    {
+      title: 'Desarrollador Front End - ReactJS/NextJS',
+      description: '2MYR(09/2020 - 07/2022)',
+      function: [
+        '-Desarrollo de la interfaz de usuario y diseño responsive. ',
+        '-Implementación de funcionalidades como botones, formularios, tablas, dashboard, etc.',
+        '-Integración de APIs además del uso de herramientas como Postman, StopLight.',
+        '-Mantenimiento, correcciones, optimización y refactorizar de proyectos. ',
+      ],
+    },
+  ];
   return (
     <div className="flex flex-col items-center justify-center">
       <IconButton
@@ -57,6 +126,37 @@ export default function Portafolio() {
             metodología ágil SCRUM, participando activamente en reuniones
             diarias
           </p>
+        </div>
+      </div>
+      <br />
+      <div className="flex flex-col gap-16 text-center p-5 bg-white-0 bg-opacity-5 w-full">
+        <span className="text-6xl">Work Experience</span>
+        <div className="grid grid-cols-2 gap-9 px-36 ">
+          {data.map((item, idx) => (
+            <div key={idx} className="flex flex-col gap-6 text-start">
+              <p className="text-3xl">{item.title}</p>
+              <p className="text-2xl">{item.description}</p>
+              {item.function.map((func, index) => (
+                <p key={index} className="text-xl">
+                  {func}
+                </p>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="py-10 text-center flex flex-col gap-16">
+        <span className="text-6xl">Projects</span>
+        <div className="grid grid-cols-3 px-40 gap-14">
+          {mockProject.map((item, idx) => (
+            <div key={idx} className="flex flex-col gap-3 text-start">
+              <div className="bg-white-0 w-full h-44 rounded-3xl">
+                {item.url}
+              </div>
+              <p className="text-3xl ">{item.title}</p>
+              <p className="text-2xl">{item.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>

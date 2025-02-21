@@ -220,7 +220,13 @@ export default function Portafolio() {
       </div>
       <div className="flex flex-col gap-16 text-center p-5 bg-white-0 bg-opacity-5 w-full">
         <span className="text-6xl">Work Experience</span>
-        <div className="grid grid-cols-2 gap-9 px-36 ">
+        <div
+          className="grid grid-cols-1 gap-9  lg:grid-cols-2"
+          style={{
+            paddingRight: 'clamp(3.125rem, 0.551rem + 9.804vw, 9.375rem)',
+            paddingLeft: 'clamp(3.125rem, 0.551rem + 9.804vw, 9.375rem)',
+          }}
+        >
           {data.map((item, idx) => (
             <div key={idx} className="flex flex-col gap-6 text-start">
               <p className="text-3xl">{item.title}</p>
@@ -236,7 +242,13 @@ export default function Portafolio() {
       </div>
       <div className="py-10 text-center flex flex-col gap-16">
         <span className="text-6xl">Projects</span>
-        <div className="grid grid-cols-3 px-40 gap-14">
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-14 lg:grid-cols-3"
+          style={{
+            paddingRight: 'clamp(3.125rem, 0.551rem + 9.804vw, 9.375rem)',
+            paddingLeft: 'clamp(3.125rem, 0.551rem + 9.804vw, 9.375rem)',
+          }}
+        >
           {mockProject.map((item, idx) => (
             <div key={idx} className="flex flex-col gap-3 text-start">
               <div className="bg-white-0 w-full h-44 rounded-3xl">
